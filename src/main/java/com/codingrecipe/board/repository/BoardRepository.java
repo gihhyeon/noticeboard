@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor
 public class BoardRepository {
@@ -14,4 +16,9 @@ public class BoardRepository {
     public void save(BoardDTO boardDTO) {
         sql.insert("Board.save", boardDTO); // Board는 maapr의 namespace를 가리킨다.
     }
+
+    public List<BoardDTO> findAll() {
+        return sql.selectList("Board.findAll");
+    }
+
 }
