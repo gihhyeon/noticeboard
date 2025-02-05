@@ -31,7 +31,7 @@ public class BoardController {
     @GetMapping("/list")
     public String findAll(Model model) {
         List<BoardDTO> boardDTOList = boardService.findAll();
-        model.addAttribute("boardDTOList", boardDTOList);
+        model.addAttribute("boardList", boardDTOList);
         System.out.println("boardDTOList = " + boardDTOList);
         return "list";
     }
