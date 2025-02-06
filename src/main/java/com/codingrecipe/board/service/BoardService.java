@@ -28,4 +28,7 @@ public class BoardService {
         return boardRepository.findById(id);
     }
 
+    public void update(BoardDTO boardDTO) {
+        boardRepository.update(boardDTO);
+    }
 }
